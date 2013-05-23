@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # required variable
 # $plugin-slug = <the slug from the wp.org repo>
 
