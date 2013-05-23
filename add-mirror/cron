@@ -1,0 +1,12 @@
+# required variable
+# $plugin-slug = <the slug from the wp.org repo>
+# $interval = [normal = 1h, slow = 24h, abandoned = 7d]
+
+# example for normal
+@hourly /home/git/crons/$plugin-slug.sync.sh >/dev/null 2>&1
+
+# example for slow
+@daily /home/git/crons/$plugin-slug.sync.sh >/dev/null 2>&1
+
+# example for abandoned
+@weekly /home/git/crons/$plugin-slug.sync.sh > /home/git/cronlogs/wp-mirrors/$plugin-slug.log
