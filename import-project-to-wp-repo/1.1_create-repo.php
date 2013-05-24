@@ -11,16 +11,16 @@ $client = new Github\Client();
 // variables
 $plugin_slug = ''; // e.g. 'wp-piwik'
 $plugin_name = ''; // e.g. 'WP-Piwik'
-$plugin_svn = ''; // e.g. 'http://plugins.svn.wordpress.org/wp-piwik/'
-$plugin_desc = 'WordPress-Mirror: ' . $plugin_name . 'SVN repository (' . $plugin_svn . ')';
+$plugin_desc = ''; // e.g. 'This plugin adds a Piwik stats site to your WordPress or WordPress multisite dashboard. '
+$repo_desc = $plugin_name . ' :: ' . $plugin_desc;
 $plugin_url = ''; // e.g. 'http://wordpress.org/plugins/wp-piwik/'
 
 // Requires authentication: https://github.com/KnpLabs/php-github-api/blob/master/doc/security.md
-// DO auth as 'wp-mirrors'
+// DO auth as 'wp-repository'
 
 // create repo
-$repo = $client->api('repo')->create( $plugin_slug, $plugin_desc, $plugin_url, true);
+$repo = $client->api('repo')->create( $plugin_slug, $repo_desc, $plugin_url, true);
 
-// deactivate wiki + issues
-$repo = $client->api('repo')->update('wp-mirrors', $plugin_slug, array('has_issues' => false, 'has_wiki' => false));
+// deactivate wiki
+$repo = $client->api('repo')->update('wp-mirrors', $plugin_slug, array('has_wiki' => false));
 ?>
