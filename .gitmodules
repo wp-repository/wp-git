@@ -1,3 +1,3 @@
 [submodule "wp-i18n-tools"]
 	path = wp-i18n-tools
-	url = https://github.com/wp-repository/wp-i18n-tools.git
+	url = git://github.com/wp-repository/wp-i18n-tools.git
