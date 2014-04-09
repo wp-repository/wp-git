@@ -3,7 +3,7 @@
 		"knplabs/github-api":			"1.1.*",
 		"m4tthumphrey/php-gitlab-api":	"dev-master"
     },
-	"autoload": { // TODO !!: http://getcomposer.org/doc/04-schema.md#psr-0
+	"autoload": {
         "psr-0": {
             "Monolog\\": "src/",
             "Vendor\\Namespace\\": "src/",
